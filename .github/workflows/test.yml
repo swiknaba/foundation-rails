@@ -14,6 +14,16 @@ jobs:
           - gemfiles/rails_6.0.gemfile # EOF: 01 Jun 2023
           - gemfiles/rails_6.1.gemfile # EOF: ?, assume 2024
           - gemfiles/rails_7.0.gemfile # EOF: ?, assume 2025
+        exclude:
+          # undefined method `assets` for Rails::Application::Configuration -- Did you mean?  asset_host
+          - ruby: 2.7
+            gemfile: gemfiles/rails_7.0.gemfile
+          - ruby: 3.0
+            gemfile: gemfiles/rails_7.0.gemfile
+          - ruby: 3.1
+            gemfile: gemfiles/rails_7.0.gemfile
+          - ruby: 3.2
+            gemfile: gemfiles/rails_7.0.gemfile
     env:
       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
     runs-on: ubuntu-latest
