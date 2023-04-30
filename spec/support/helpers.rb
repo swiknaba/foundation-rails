@@ -9,7 +9,7 @@ module FoundationRailsTestHelpers
     FileUtils.cd(dummy_app_path) do
       # @WARNING: hacking in the old (pre-Rails 6) asset pipeline folders.
       %x(mkdir -p app/assets/javascripts)
-      %x(touch app/assets/javascripts/application.js) unless File.exists?("#{dummy_app_path}/app/assets/javascripts/application.js")
+      %x(touch app/assets/javascripts/application.js) unless File.exist?("#{dummy_app_path}/app/assets/javascripts/application.js")
       %x(bundle install)
     end
   end
