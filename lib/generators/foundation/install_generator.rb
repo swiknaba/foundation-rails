@@ -20,7 +20,7 @@ module Foundation
       end
 
       def detect_js_format
-        %w(.coffee .coffee.erb .js.coffee .js.coffee.erb .js .js.erb).each do |ext|
+        %w(.js .js.erb).each do |ext|
           if File.exist?(File.join(javascripts_base_dir, "application#{ext}"))
             if ext.include?(".coffee")
               return [ext, "#=", "\n() ->\n  $(document).foundation()\n"]
