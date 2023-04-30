@@ -1,5 +1,6 @@
 require 'capybara/rspec'
 require 'bundler/setup'
+require 'byebug'
 
 Bundler.require(:default, :test)
 
