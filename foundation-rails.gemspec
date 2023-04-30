@@ -19,14 +19,15 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "sass", [">= 3.3.0"]
-  spec.add_dependency "railties", [">= 3.1.0"]
+  spec.add_dependency "railties", [">= 6.0.0"]
   spec.add_dependency "sprockets-es6", [">= 0.9.0"]
 
-  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "appraisal"
+  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "byebug"
   spec.add_development_dependency "capybara"
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec", "~> 3.2"
-  spec.add_development_dependency "appraisal"
+  spec.add_development_dependency "rspec"
 
   # Required by dummy app
   spec.add_development_dependency "bootsnap"

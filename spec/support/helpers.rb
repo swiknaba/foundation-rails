@@ -7,6 +7,9 @@ module FoundationRailsTestHelpers
       end
     end
     FileUtils.cd(dummy_app_path) do
+      # @WARNING: hacking in the old (pre-Rails 6) asset pipeline folders.
+      %x(mkdir -p app/assets/javascripts)
+      %x(touch app/assets/javascripts/application.js) unless File.exist?("#{dummy_app_path}/app/assets/javascripts/application.js")
       %x(bundle install)
     end
   end
@@ -17,7 +20,7 @@ module FoundationRailsTestHelpers
 
   def install_foundation
     FileUtils.cd(dummy_app_path) do
-      puts %x(rails g foundation:install -f 2>&1)
+      puts %x(bundle exec rails g foundation:install -f 2>&1)
     end
   end
 
